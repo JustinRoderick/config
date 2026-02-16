@@ -1,0 +1,60 @@
+[user]
+	name = Justin Roderick
+	email = justinroderick258@gmail.com
+[difftool]
+	prompt = false
+[fetch]
+	fsckObjects = true
+	prune = true
+	pruneTags = true
+	all = true
+[transfer]
+	fsckObjects = true
+[recieve]
+	fsckObjects = true
+[commit]
+	verbose = true
+[alias]
+	l = log --graph --pretty=format:'%C(auto)%h%d %w(100,0,8)%s %C(dim)(%ai by %aN)%Creset'
+	difft = difftool
+[rerere]
+	enabled = true
+[pull]
+	ff = only
+[core]
+	ignorecase = false
+	autocrlf = input
+[init]
+	defaultBranch = main
+[checkout]
+	defaultRemote = origin
+[stash]
+	showPatch = true
+	showIncludeUntracked = true
+#[filter "lfs"]
+#	smudge = git-lfs smudge -- %f
+#	process = git-lfs filter-process
+#	required = true
+#	clean = git-lfs clean -- %f
+#[tag]
+#	gpgSign = true
+[push]
+	; default = nothing
+	autoSetupRemote = true
+[diff]
+	tool = difftastic
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft --tab-width 2 "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[rebase]
+	autosquash = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
